@@ -22,6 +22,7 @@ import Lodding from "../../../UtilityFolder/Lodding";
 import Error from "../../../UtilityFolder/Error";
 
 function ProductDashbord() {
+  const BASE_URL = "/api";
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [inputSearch, setInputSearch] = useState("");
@@ -132,7 +133,7 @@ function ProductDashbord() {
                       <img
                         src={
                           item.imagePath
-                            ? `http://ejfoodieordernow.runasp.net/${item.imagePath}`
+                            ? `${BASE_URL}/${item.imagePath}`
                             : "http://via.placeholder.com/100"
                         }
                         className="w-14 h-14 rounded-2xl object-cover border-2 border-white shadow-sm"
@@ -198,7 +199,7 @@ function ProductDashbord() {
                   <img
                     src={
                       item.imagePath
-                        ? `http://ejfoodieordernow.runasp.net/${item.imagePath}`
+                        ? `${BASE_URL}/${item.imagePath}`
                         : "https://via.placeholder.com/100"
                     }
                     className="w-20 h-20 rounded-2xl object-cover shadow-md"
