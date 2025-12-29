@@ -165,7 +165,7 @@ function UpdateProduct() {
                       src={
                         imagePreview ||
                         (productData?.imagePath
-                          ? `http://ejfoodieordernow.runasp.net/${productData.imagePath}`
+                          ? `/external-assets/${productData.imagePath}`
                           : "https://via.placeholder.com/400")
                       }
                       alt="Product"

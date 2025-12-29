@@ -133,7 +133,7 @@ function ProductDashbord() {
                       <img
                         src={
                           item.imagePath
-                            ? `${BASE_URL}/${item.imagePath}`
+                            ? `/external-assets/${item.imagePath}`
                             : "http://via.placeholder.com/100"
                         }
                         className="w-14 h-14 rounded-2xl object-cover border-2 border-white shadow-sm"
