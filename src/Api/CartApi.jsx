@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // লাইভ সার্ভার বেস ইউআরএল
-const BASE_URL = "http://ejfoodieordernow.runasp.net/api";
+const BASE_URL = "/api";
 
 // টোকেনটি সরাসরি লোকাল স্টোরেজ থেকে নেওয়ার ফাংশন (যাতে প্রতিবার লেটেস্ট টোকেন পায়)
 const getAuthHeader = () => {

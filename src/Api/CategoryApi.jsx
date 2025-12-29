@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // MonsterASP লাইভ সার্ভার ইউআরএল
-const BASE_URL = "http://ejfoodieordernow.runasp.net/api";
+const BASE_URL = "/api";
 
 // ডায়নামিক হেডার ফাংশন যাতে টোকেন সবসময় লেটেস্ট থাকে
 const getAuthHeaders = (isMultipart = false) => {

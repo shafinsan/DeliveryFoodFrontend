@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // MonsterASP লাইভ সার্ভার বেস ইউআরএল
-const BASE_URL = "http://ejfoodieordernow.runasp.net/api";
+const BASE_URL = "/api";
 
 // ১. পাসওয়ার্ড রিসেট রিকোয়েস্ট তৈরি করা (ইমেইল পাঠানো)
 export const ResetPassCreate = async (data) => {

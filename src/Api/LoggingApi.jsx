@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // আপনার লাইভ এপিআই ইউআরএল
-const BASE_URL = "http://ejfoodieordernow.runasp.net/api";
+const BASE_URL = "/api";
 
 export const loging = async (data) => {
   try {

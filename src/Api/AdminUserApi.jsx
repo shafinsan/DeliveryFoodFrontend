@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // আপনার লাইভ সার্ভার ইউআরএল
-const BASE_URL = "http://ejfoodieordernow.runasp.net/api";
+const BASE_URL = "/api";
 
 const MyToken = localStorage.getItem("Token")
   ? JSON.parse(localStorage.getItem("Token")).token
