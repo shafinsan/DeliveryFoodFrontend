@@ -177,7 +177,7 @@ function User() {
                       <img
                         src={
                           user.profilePic
-                            ? `http://ejfoodieordernow.runasp.net/${user.profilePic}`
+                            ? `/external-assets/${user.profilePic}`
                             : "https://img.daisyui.com/images/profile/demo/2@94.webp"
                         }
                         className="w-10 h-10 rounded-xl object-cover border-2 border-white shadow-sm"
@@ -243,7 +243,7 @@ function User() {
                   <img
                     src={
                       user.profilePic
-                        ? `http://ejfoodieordernow.runasp.net/${user.profilePic}`
+                        ? `/external-assets/${user.profilePic}`
                         : "https://via.placeholder.com/100"
                     }
                     className="w-12 h-12 rounded-2xl object-cover"

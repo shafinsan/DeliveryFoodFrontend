@@ -84,7 +84,7 @@ function Profile() {
     setEdit(false);
   };
   if (path) {
-    localStorage.setItem("profile", `http://ejfoodieordernow.runasp.net/${path}`);
+    localStorage.setItem("profile", `/external-assets/${path}`);
   }
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4 ">
@@ -108,7 +108,7 @@ function Profile() {
               ) : (
                 <>
                   <img
-                    src={`http://ejfoodieordernow.runasp.net/${path}`}
+                    src={`/external-assets/${path}`}
                     alt="profile"
                     className="w-full h-full bg-white rounded bg-cover object-cover"
                   />

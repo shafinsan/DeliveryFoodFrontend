@@ -123,7 +123,7 @@ function Cart() {
                     <div className="relative w-full sm:w-32 h-32 rounded-2xl overflow-hidden bg-gray-50 flex-shrink-0">
                       <img
                         src={
-                          `http://ejfoodieordernow.runasp.net/${item.imagePath}` || "https://via.placeholder.com/150"
+                          `/external-assets/${item.imagePath}` || "https://via.placeholder.com/150"
                         }
                         alt={item.name}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

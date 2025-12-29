@@ -156,7 +156,7 @@ function EditCategory() {
                   src={
                     preview ||
                     (data?.imagePath
-                      ? `http://ejfoodieordernow.runasp.net/${data.imagePath}`
+                      ? `/external-assets/${data.imagePath}`
                       : "https://via.placeholder.com/400")
                   }
                   alt="Category"

@@ -125,7 +125,7 @@ function Details() {
   };
 
   const imageUrl = food?.imagePath
-    ? `http://ejfoodieordernow.runasp.net/${food.imagePath}`
+    ? `/external-assets/${food.imagePath}`
     : "https://t3.ftcdn.net/jpg/00/69/85/64/360_F_69856461_O8p56mlDwWo0mXFswcYbGbP7Ihlbimiw.jpg";
 
   return (

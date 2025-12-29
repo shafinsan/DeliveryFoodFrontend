@@ -131,7 +131,7 @@ function Category() {
                     <img
                       src={
                         cat?.imagePath
-                          ? `http://ejfoodieordernow.runasp.net/${cat.imagePath}`
+                          ? `/external-assets/${cat.imagePath}`
                           : "https://via.placeholder.com/150"
                       }
                       className="w-12 h-12 rounded-xl object-cover border border-gray-100"
@@ -182,7 +182,7 @@ function Category() {
                 <img
                   src={
                     cat?.imagePath
-                      ? `http://ejfoodieordernow.runasp.net/${cat.imagePath}`
+                      ? `/external-assets/${cat.imagePath}`
                       : "https://via.placeholder.com/150"
                   }
                   className="w-14 h-14 rounded-2xl object-cover"

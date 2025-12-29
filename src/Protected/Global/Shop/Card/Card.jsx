@@ -41,7 +41,7 @@ function Card({ data }) {
     <div className="card bg-base-100 sm:w-36 md:w-40 lg:w-50 shadow-sm overflow-hidden">
       <figure className="h-32 w-full">
         <img
-          src={imagePath ? `${IMAGE_BASE_URL}${imagePath}` : PLACEHOLDER_IMAGE}
+          src={imagePath ? `/external-assets/${imagePath}` : PLACEHOLDER_IMAGE}
           alt={name}
           className="object-cover w-full h-full"
         />

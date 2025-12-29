@@ -87,7 +87,7 @@ function DeleteCategory() {
               <img
                 src={
                   data?.imagePath
-                    ? `http://ejfoodieordernow.runasp.net/${data?.imagePath}`
+                    ? `/external-assets/${data?.imagePath}`
                     : "https://via.placeholder.com/150"
                 }
                 alt="Preview"
