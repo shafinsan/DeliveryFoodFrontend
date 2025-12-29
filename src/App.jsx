@@ -38,33 +38,7 @@ function App() {
   useEffect(() => {
     TokenValidator();
   }, []);
-  useEffect(() => {
-    // ১. রাইট-ক্লিক মেনু বন্ধ করা
-    const handleContextMenu = (e) => {
-      e.preventDefault();
-    };
-
-    // ২. কিবোর্ড শর্টকাট বন্ধ করা (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
-    const handleKeyDown = (e) => {
-      if (
-        e.keyCode === 123 || // F12
-        (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
-        (e.ctrlKey && e.shiftKey && e.keyCode === 74) || // Ctrl+Shift+J
-        (e.ctrlKey && e.keyCode === 85) // Ctrl+U (View Source)
-      ) {
-        e.preventDefault();
-        alert("Security Reason: Inspect element is disabled!");
-      }
-    };
-
-    window.addEventListener("contextmenu", handleContextMenu);
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("contextmenu", handleContextMenu);
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  
   TokenDeconder();
   TokenValidator();
   return (
