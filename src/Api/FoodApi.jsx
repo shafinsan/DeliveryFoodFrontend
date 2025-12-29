@@ -1,7 +1,9 @@
 import axios from "axios";
 
 // MonsterASP লাইভ সার্ভার বেস ইউআরএল
-const BASE_URL = "http://ejfoodieordernow.runasp.net/api";
+
+const TARGET_URL = "http://ejfoodieordernow.runasp.net/api";
+const BASE_URL = `https://corsproxy.io/?${encodeURIComponent(TARGET_URL)}`;
 
 // ডায়নামিক হেডার ফাংশন (যাতে প্রতিবার লেটেস্ট টোকেন পায়)
 const getAuthHeaders = () => {

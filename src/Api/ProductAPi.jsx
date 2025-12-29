@@ -1,7 +1,8 @@
 import axios from "axios";
 
 // MonsterASP লাইভ সার্ভার বেস ইউআরএল
-const BASE_URL = "http://ejfoodieordernow.runasp.net/api";
+const TARGET_URL = "http://ejfoodieordernow.runasp.net/api";
+const BASE_URL = `https://corsproxy.io/?${encodeURIComponent(TARGET_URL)}`;
 
 // ডায়নামিক হেডার ফাংশন (টোকেন লেটেস্ট রাখার জন্য)
 const getAuthHeaders = (isMultipart = false) => {
@@ -23,7 +24,7 @@ const getAuthHeaders = (isMultipart = false) => {
 
 export const AllProduct = async () => {
   try {
-    const response = await axios.get(`/api/Food/GetAll`);
+    const response = await axios.get(`${BASE_URL}/Food/GetAll`);
     return response?.data;
   } catch (error) {
     // Axios এ এরর রেসপন্স error.response এ থাকে
