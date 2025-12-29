@@ -199,7 +199,7 @@ function ProductDashbord() {
                   <img
                     src={
                       item.imagePath
-                        ? `${BASE_URL}/${item.imagePath}`
+                        ? `/external-assets/${item.imagePath}` // কোনো http থাকবে না, শুধু প্রক্সি পাথ
                         : "https://via.placeholder.com/100"
                     }
                     className="w-20 h-20 rounded-2xl object-cover shadow-md"

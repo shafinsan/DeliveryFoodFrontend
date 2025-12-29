@@ -5,6 +5,10 @@
       "destination": "http://ejfoodieordernow.runasp.net/api/:path*"
     },
     {
+      "source": "/external-assets/:path*",
+      "destination": "http://ejfoodieordernow.runasp.net/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
