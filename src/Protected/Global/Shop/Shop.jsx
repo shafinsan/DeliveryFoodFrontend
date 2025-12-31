@@ -29,35 +29,54 @@ function Shop() {
 
   // Calculate stats even if data is loading to keep hook order consistent
   const stats = useMemo(() => {
-    if (!data || data.length === 0) return { minPrice: 0, maxPrice: 1000, minTime: 0, maxTime: 120 };
+    // FIX: Add "!Array.isArray(data)" to safely handle non-array responses
+    if (!data || !Array.isArray(data) || data.length === 0) {
+      return { minPrice: 0, maxPrice: 1000, minTime: 0, maxTime: 120 };
+    }
+
     return {
-      minPrice: Math.min(...data.map(d => d.price)),
-      maxPrice: Math.max(...data.map(d => d.price)),
-      minTime: Math.min(...data.map(d => d.cookingTime)),
-      maxTime: Math.max(...data.map(d => d.cookingTime)),
+      minPrice: Math.min(...data.map((d) => d.price)),
+      maxPrice: Math.max(...data.map((d) => d.price)),
+      minTime: Math.min(...data.map((d) => d.cookingTime)),
+      maxTime: Math.max(...data.map((d) => d.cookingTime)),
     };
   }, [data]);
 
   const filteredResults = useMemo(() => {
-    if (!data) return [];
+    // FIX: Check if data is an array
+    if (!data || !Array.isArray(data)) return [];
+
     return data.filter((item) => {
-      const matchesCategory = category ? item.foodCategoryName === category : true;
+      const matchesCategory = category
+        ? item.foodCategoryName === category
+        : true;
       const matchesPrice = priceRange ? item.price <= priceRange : true;
       const matchesTime = timeRange ? item.cookingTime <= timeRange : true;
-      const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase());
+      const matchesSearch = item.name
+        .toLowerCase()
+        .includes(search.toLowerCase());
       return matchesCategory && matchesPrice && matchesTime && matchesSearch;
     });
   }, [data, category, priceRange, timeRange, search]);
 
   // 2. NOW YOU CAN DO EARLY RETURNS
-  if (isLoading) return <div className="min-h-screen flex justify-center items-center"><Lodding /></div>;
-  if (isError) return <div className="min-h-screen flex justify-center items-center"><Error /></div>;
+  if (isLoading)
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <Lodding />
+      </div>
+    );
+  if (isError)
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <Error />
+      </div>
+    );
 
   // 3. ACTUAL RENDERING
   return (
     <main className="min-h-screen bg-slate-50 flex flex-col items-center">
       <div className="w-full max-w-[1600px] px-2 sm:px-6 lg:px-8 py-4">
-        
         <Filter
           category={category}
           setCategory={setCategory}
@@ -78,7 +97,7 @@ function Shop() {
         </div>
 
         {/* 100% Responsive Grid: 2 columns on tiny phones, up to 6 on desktop */}
-        <motion.div 
+        <motion.div
           layout
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-6"
         >
@@ -100,7 +119,9 @@ function Shop() {
 
         {filteredResults.length === 0 && (
           <div className="w-full py-20 flex flex-col items-center opacity-60">
-             <p className="text-xl font-semibold text-slate-400">No foods found</p>
+            <p className="text-xl font-semibold text-slate-400">
+              No foods found
+            </p>
           </div>
         )}
 

@@ -25,7 +25,7 @@ function Filter({
     queryFn: () => getAllCategory(),
     staleTime: 5000,
   });
-  console.log("catagoty :",data)
+  console.log("catagoty :", data);
 
   // Toggle filter logic: click same filter again to close it
   const handleFilterClick = (filter) => {
@@ -157,7 +157,8 @@ function Filter({
               ) : isError ? (
                 <option disabled>Error loading categories</option>
               ) : (
-                data?.map((d) => (
+                /* FIX: Handle if data is an array OR an object wrapping an array */
+                (Array.isArray(data) ? data : data?.data || [])?.map((d) => (
                   <option key={d?.id} value={d?.name}>
                     {d?.name}
                   </option>
